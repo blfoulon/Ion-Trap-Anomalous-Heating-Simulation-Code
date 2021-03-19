@@ -3,8 +3,9 @@
 import numpy as np
 from scipy.interpolate import RegularGridInterpolator
 
-potgrad = np.load('potgrad_v4.npy')
-gridpot = np.load('gridpot.npy')
+data_source = 'interpolated_data/'
+potgrad = np.load(data_source+'potgrad_v4.npy')
+gridpot = np.load(data_source+'gridpot.npy')
 
 gridsize = .1
 
