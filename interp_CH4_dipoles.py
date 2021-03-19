@@ -1,6 +1,5 @@
 import math
 import numpy as np
-from subprocess import call
 from scipy.interpolate import RegularGridInterpolator
 
 griddipole = np.load('griddipole.npy')
