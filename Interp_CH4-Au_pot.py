@@ -19,9 +19,6 @@ gridz = int(np.ceil(5.15/gridsize) + 1)
 xc = np.linspace(-1.1,28.1,gridx) #.1 A extra on each side
 yc = np.linspace(-.1,2.956231451,gridy) #.1 A extra on each side
 zc = np.linspace(-2.573458221,2.573458221,gridz) #.1 A extra on each side
-spacex = 29.2/(gridx-1)
-spacey = 3.056231451/(gridy-1)
-spacez = 5.146916442/(gridz-1)
 
 potgrad_xz_fix = np.zeros(np.shape(potgrad))
 potgrad_xz_fix[0,:,:,:] = potgrad[1,:,:,:]
