@@ -6,11 +6,6 @@ from scipy.interpolate import RegularGridInterpolator
 potgrad = np.load('potgrad_v4.npy')
 gridpot = np.load('gridpot.npy')
 
-xyzpotgrad = np.zeros(np.shape(np.moveaxis(potgrad,(0,1),(-1,-2)))) #rearranged for z out of plane
-xyzpotgrad[:,:,:,0] = np.moveaxis(potgrad,(0,1),(-1,-2))[:,:,:,1]
-xyzpotgrad[:,:,:,1] = np.moveaxis(potgrad,(0,1),(-1,-2))[:,:,:,2]
-xyzpotgrad[:,:,:,2] = np.moveaxis(potgrad,(0,1),(-1,-2))[:,:,:,0]
-
 gridsize = .1
 
 gridx = int(np.ceil(29.2/gridsize) + 1)
@@ -32,12 +27,10 @@ def force_CH4_v4(xyz):
     xyzp = 1.0*xyz
     xyzp[:,0] = np.mod(xyz[:,0],2.856231451)
     xyzp[:,1] = np.mod(xyz[:,1],4.946916442) - 2.473458221
-    force = force_interp(xyzp)
-    return force
+    return force_interp(xyzp)
 
 def energyf_v4(xyz):
     xyzp = 1.0*xyz
     xyzp[:,0] = np.mod(xyz[:,0],2.856231451)
     xyzp[:,1] = np.mod(xyz[:,1],4.946916442) - 2.473458221
-    E = energy_interp(xyzp)
-    return E
+    return energy_interp(xyzp)
