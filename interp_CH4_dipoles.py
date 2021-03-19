@@ -1,8 +1,5 @@
-#this produces the final script we use, it has y going from 0 to 5, roughly, instead of -2.5 to 2.5 as in the original data taken from DFT maps, see mathematica nb file
-
 import sys
 import os
-import time
 import math
 import numpy as np
 import shutil
@@ -43,9 +40,5 @@ def dipole_CH4(xyz):
     xyzp = copy.deepcopy(xyz)
     xyzp[:,0] = np.mod(xyz[:,0],2.856231451)
     xyzp[:,1] = np.mod(xyz[:,1]+ 2.473458221,4.946916442) - 2.473458221
-    time1 = time.time()
-#    print("--- %s seconds ---" % (time.time() - start_time))
     dipole = dipole_interp(xyzp)
-    timed = time.time() - time1
-#    print("--- %s seconds ---" % (timed))
     return dipole
