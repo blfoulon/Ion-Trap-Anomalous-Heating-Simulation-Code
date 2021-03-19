@@ -2,6 +2,7 @@
 
 import numpy as np
 from scipy.interpolate import RegularGridInterpolator
+import copy
 
 data_source = 'DFT_interpolated_data/'
 potgrad = np.load(data_source+'potgrad_v4.npy')
@@ -25,13 +26,13 @@ force_interp = RegularGridInterpolator((yc,zc,xc), np.moveaxis(-potgrad_xz_fix,(
 energy_interp = RegularGridInterpolator((yc,zc,xc), np.moveaxis(gridpot,0,-1))
 
 def force_CH4_v4(xyz):
-    xyzp = 1.0*xyz
+    xyzp = copy.deepcopy(xyz)
     xyzp[:,0] = np.mod(xyz[:,0],2.856231451)
     xyzp[:,1] = np.mod(xyz[:,1],4.946916442) - 2.473458221
     return force_interp(xyzp)
 
 def energyf_v4(xyz):
-    xyzp = 1.0*xyz
+    xyzp = copy.deepcopy(xyz)
     xyzp[:,0] = np.mod(xyz[:,0],2.856231451)
     xyzp[:,1] = np.mod(xyz[:,1],4.946916442) - 2.473458221
     return energy_interp(xyzp)
