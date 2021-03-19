@@ -2,7 +2,7 @@ import numpy as np
 from scipy.interpolate import RegularGridInterpolator
 import copy
 
-data_source = 'interpolated_data/'
+data_source = 'DFT_interpolated_data/'
 griddipole = np.load(data_source+'griddipole.npy')
 
 gridsize = 0.1
