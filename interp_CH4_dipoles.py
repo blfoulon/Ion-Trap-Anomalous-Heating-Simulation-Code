@@ -1,9 +1,7 @@
 import math
 import numpy as np
-import shutil
-import scipy
 from subprocess import call
-from scipy.interpolate import griddata
+from scipy.interpolate import RegularGridInterpolator
 import matplotlib.pyplot as plt
 
 griddipole = np.load('griddipole.npy')
@@ -30,7 +28,7 @@ spacex = 3.056231451/(gridx-1)
 spacey = 5.146916442/(gridy-1)
 
 
-dipole_interp = scipy.interpolate.RegularGridInterpolator((xc,yc,zc), griddipole)
+dipole_interp = RegularGridInterpolator((xc,yc,zc), griddipole)
 
 import copy
 
