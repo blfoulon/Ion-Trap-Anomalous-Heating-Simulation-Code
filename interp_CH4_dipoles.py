@@ -1,6 +1,6 @@
-import math
 import numpy as np
 from scipy.interpolate import RegularGridInterpolator
+import copy
 
 griddipole = np.load('griddipole.npy')
 
@@ -25,10 +25,7 @@ spacez = 32.2/(gridz-1)
 spacex = 3.056231451/(gridx-1)
 spacey = 5.146916442/(gridy-1)
 
-
 dipole_interp = RegularGridInterpolator((xc,yc,zc), griddipole)
-
-import copy
 
 def dipole_CH4(xyz):
     xyzp = copy.deepcopy(xyz)
