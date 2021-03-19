@@ -3,7 +3,7 @@
 import numpy as np
 from scipy.interpolate import RegularGridInterpolator
 
-data_source = 'interpolated_data/'
+data_source = 'DFT_interpolated_data/'
 potgrad = np.load(data_source+'potgrad_v4.npy')
 gridpot = np.load(data_source+'gridpot.npy')
 
