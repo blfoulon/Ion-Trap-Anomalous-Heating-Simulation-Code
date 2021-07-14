@@ -6,4 +6,5 @@ B. Foulon, K. G. Ray, C. Kim, Y. Liu, B. M. Rubenstein, and V. Lordi, _How Corre
 
 This includes:
 * Raw data of the DFT-calculated surface-adsorbate energies (and forces) and adsorbate induced dipole moments (DFT_interpolated_data).
-* Interpolation scripts for the surface-adsorbate energies (and forces) (.py) and adsorbate induced dipole moments (.py).
+* Interpolation scripts for the surface-adsorbate energies (and forces) (Interp_CH4_Au_pot.py) and adsorbate induced dipole moments (interp_CH4_dipoles.py).
+* Custom ASE calculator combining surface-adsorbate and adsorbate-adsorbate interactions (.py).
